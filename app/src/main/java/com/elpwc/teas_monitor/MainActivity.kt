@@ -1,5 +1,7 @@
 package com.elpwc.teas_monitor
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.elpwc.teas_monitor.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,5 +25,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        startActivity(Intent(this@MainActivity, LoginActivity::class.java))
     }
 }
